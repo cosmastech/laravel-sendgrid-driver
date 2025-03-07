@@ -36,13 +36,13 @@ class SendgridTransport extends AbstractTransport implements Stringable
     /**
      * @var Client
      */
-    private $client;
-    private $attachments;
-    private $numberOfRecipients;
-    private $apiKey;
-    private $endpoint;
+    protected $client;
+    protected $attachments;
+    protected $numberOfRecipients;
+    protected $apiKey;
+    protected $endpoint;
 
-    public function __construct(ClientInterface $client, string $api_key, string $endpoint = null)
+    public function __construct(ClientInterface $client, string $api_key, ?string $endpoint = null)
     {
         $this->client = $client;
         $this->apiKey = $api_key;
